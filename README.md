@@ -32,14 +32,14 @@ This project implements a sophisticated AI assistant that combines:
 - ✅ Speed: GPU acceleration on T4/A100
 - ✅ Phi-3: Microsoft's efficient 3.8B parameter model
 
+
+[//]: # ("Comment")
+[Comment test]::
+[//]: # (This may be the most platform independent comment)
 ## 🏗️ System Architecture
 
 ```
 User Query
-    ↓
-┌─────────────────────────────────────┐
-│   Gradio Web Interface              │
-└─────────────────────────────────────┘
     ↓
 ┌─────────────────────────────────────┐
 │   CrewAI Multi-Agent System         │
@@ -191,16 +191,16 @@ dublin-council-ai/
 - ❌ LiteLLM doesn't recognize raw llama-cpp objects
 - ✅ Ollama provides the compatibility layer
 
-#### 5. **Command Line Interface**
-**Chosen over**: Gradio, Streamlit, Flask
+<!--  #### 5. **Command Line Interface**
+[//]: <>  **Chosen over**: Gradio, Streamlit, Flask
 
-**Reasons**:
-- ✅ Works in any environment (Colab, Jupyter, local)
-- ✅ No port/threading issues
-- ✅ Easy to script and automate
-- ✅ Perfect for batch processing
-- ✅ Simple to understand and modify
-- ✅ Saves conversation history automatically
+[//]: <>  **Reasons**:
+[//]: <>  - ✅ Works in any environment (Colab, Jupyter, local)
+[//]: <>  - ✅ No port/threading issues
+[//]: <>  - ✅ Easy to script and automate
+[//]: <>  - ✅ Perfect for batch processing
+[//]: <>  - ✅ Simple to understand and modify
+[//]: <>  - ✅ Saves conversation history automatically-->
 
 ### Key Design Decisions
 
@@ -238,12 +238,12 @@ WebScraper → BeautifulSoup → Clean Text → FAISS
 - **Optional PDFs**: Can add policy documents for more coverage
 - **FAISS**: Stores vectors for fast similarity search
 
-**Why web scraping over PDF upload?**
-- ✅ Always up-to-date information
-- ✅ No manual document collection
-- ✅ Covers breadth of services
-- ✅ Easy to add new pages
-- ⚠️ PDFs still supported as supplement
+<!-- **Why web scraping over PDF upload?**
+[//]: <>  - ✅ Always up-to-date information
+[//]: <>  - ✅ No manual document collection
+[//]: <>  - ✅ Covers breadth of services
+[//]: <>  - ✅ Easy to add new pages
+[//]: <>  - ⚠️ PDFs still supported as supplement-->
 
 ### Step 2: RAG Tool Creation
 ```python
@@ -303,21 +303,20 @@ task3 = Task(
     context=[task1, task2]  # Sees both outputs
 )
 ```
+<!--  ### Step 5: Gradio Interface
+[//]: <>  ```python
+[//]: <>  # Why: User-friendly chat interface
 
-### Step 5: Gradio Interface
-```python
-# Why: User-friendly chat interface
+[//]: <>  def process_query(query, history):
+[//]: <>      result = crew.kickoff()  # Run agents
+[//]: <>      return formatted_response
 
-def process_query(query, history):
-    result = crew.kickoff()  # Run agents
-    return formatted_response
-
-demo = gr.ChatInterface(
-    fn=process_query,
-    examples=[...],  # Suggested queries
-    share=True       # Public URL
-)
-```
+[//]: <>  demo = gr.ChatInterface(
+[//]: <>      fn=process_query,
+[//]: <>      examples=[...],  # Suggested queries
+[//]: <>      share=True       # Public URL
+[//]: <>  )
+[//]: <>  ```-->
 
 ## 📊 Performance
 
